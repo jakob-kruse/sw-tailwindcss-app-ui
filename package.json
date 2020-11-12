@@ -1,0 +1,10 @@
+{
+  "name": "sw-tailwindcss-app-ui",
+  "version": "1.0.0",
+  "description": "A tailwind plugin to use the shopware 6 administration styles",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^1.9.6"
+  }
+}
