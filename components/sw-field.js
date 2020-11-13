@@ -1,49 +1,43 @@
-const { colors } = require("../variables");
+const { colors, misc } = require("../variables");
 
-module.exports = () => {
-  return {
-    ".sw-field": {
-      width: "100%",
-      marginBottom: "32px",
+const fieldComponent = {
+  width: "100%",
+  marginBottom: "32px",
 
-      ".sw-field__label": {
-        display: "flex",
-        lineHeight: "16px",
-        fontSize: "14px",
-        marginBottom: "8px",
-        color: colors["$color-kashmir"],
-        label: {
-          flexGrow: 1,
-        },
-      },
+  "& > input": {
+    display: "block",
+    width: "100%",
+    border: `1px solid ${colors["color-steam-cloud"]}`,
+    borderRadius: misc["border-radius-default"],
+    overflow: "hidden",
+    padding: "12px 16px",
+    background: colors["color-white"],
+    fontSize: misc["font-size-small"],
+    fontFamily: misc["font-family-default"],
+    lineHeight: "22px",
+    transition: misc["sw-field-transition"],
+    color: colors["color-gutenberg"],
+    outline: "none",
 
-      ".sw-field__label": {
-        content: '"*"',
-        color: colors["color-shopware-brand-500"],
-      },
-
-      ".sw-field__button-restore": {
-        color: colors["$color-kashmir"],
-        padding: "0 8px",
-        border: "none",
-        background: "none",
-        outline: "none",
-        MozAppearance: "none",
-        WebkitAppearance: "none",
-        cursor: "pointer",
-      },
-
-      ".sw-field__help-text": {
-        alignSelf: "center",
-      },
-
-      "&.is--inherited": {
-        ".sw-field__label": { color: colors["$color-purple"] },
-      },
-
-      "&.has--error": {
-        marginBottom: "12px",
-      },
+    "&:disabled": {
+      background: `${colors["color-light-gray"]}`,
+      borderColor: `${colors["color-steam-cloud"]}`,
     },
-  };
+  },
+
+  "& > .sw-field__label": {
+    display: "flex",
+    fontFamily: misc["font-family-default"],
+    webkitFontSmoothing: "antialiased",
+    flexGrow: 1,
+    color: colors["color-darkgray-200"],
+    lineHeight: "16px",
+    fontSize: misc["font-size-small"],
+    marginBottom: "8px",
+    padding: 0,
+  },
+};
+
+module.exports = (modification = {}) => {
+  return Object.assign(fieldComponent, modification);
 };
