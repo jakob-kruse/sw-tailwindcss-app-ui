@@ -1,6 +1,8 @@
-# Tailwind + Shopware - App UI Kit
+# WIP: Tailwind + Shopware - App UI Kit
 
-This plugin provides the [Shopware 6](https://www.shopware.com/en/) Administration styles in any project that is using [TailwindCSS](https://tailwindcss.com/)
+This plugin provides the [Shopware 6](https://www.shopware.com/en/) Administration styles in any project using [TailwindCSS](https://tailwindcss.com/)
+
+Hint: It is recommended to use something like [cssnano](https://www.npmjs.com/package/cssnano) for production to remove unnecessary classes
 
 ## Installation
 
@@ -20,7 +22,11 @@ plugins: [require("sw-tailwindcss-app-ui")],
 ...
 ```
 
-## Usage
+# Colors
+
+To add a color use `.sw-COLOR_NAME`. For a list of available colors have a look at the colors object inside of [the variables file](variables.js)
+
+## Components
 
 This plugin currently only supports the following components:
 
@@ -65,7 +71,7 @@ This plugin currently only supports the following components:
 To extend components create a new entry in the theme section of your `tailwind.config.js`.
 
 The key should be the component name (e.g "sw-button") and the value should be your modifaction in [CSS-in-JS syntax
-](https://tailwindcss.com/docs/plugins#css-in-js-syntax).
+](https://tailwindcss.com/docs/plugins#css-in-js-syntax)
 
 ### Example: Extending the button component
 
